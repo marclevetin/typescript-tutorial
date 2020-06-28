@@ -1,15 +1,26 @@
-interface ILink {
+interface Link {
     description?: string;
     id?: number;
     url: string;
 
 }
 
-const obj1: ILink = {url: 'string1'};
-const obj2: ILink = {url: 'string2'};
-const obj3: ILink = {url: 'string3'};
+interface TranslatedLink extends Link {
+    language: string;
+}
 
-const arrOfLinks: Array<ILink> = [obj1, obj2, obj3];
+const link1: TranslatedLink = {
+    description: "Typescript tutotial for beginners is a tutorial for all the Javascript developers ...",
+    id: 1,
+    url: 'www.valentinog.com/typescript',
+    language: 'en'
+};
+
+const obj1: Link = {url: 'string1'};
+const obj2: Link = {url: 'string2'};
+const obj3: Link = {url: 'string3'};
+
+const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
 
 const term: string = 'java';
 
