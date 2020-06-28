@@ -1,0 +1,1 @@
+Walking through a typescript tutorial from https://www.valentinog.com/blog/typescript/
