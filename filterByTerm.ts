@@ -2,7 +2,7 @@ interface Link {
     description?: string;
     id?: number;
     url: string;
-
+    [index: string]: any;
 }
 
 interface TranslatedLink extends Link {
@@ -24,15 +24,40 @@ const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
 
 const term: string = 'java';
 
-function filterByTerm(input: Array<Link>, searchTerm: string) {
+function filterByTerm(
+    input: Array<Link>, 
+    searchTerm: string,
+    lookupKey: string = 'url'
+) : Array<Link> {
     if (!searchTerm) throw Error("searchTerm cannot be empty");
     if (!input.length) throw Error("inputArr cannot be empty");
 
     const regex = new RegExp(searchTerm, "i");
 
     return input.filter(function (arrayElement) {
-        return arrayElement.url.match(regex);
+        return arrayElement[lookupKey].match(regex);
     });
 }
 
 filterByTerm(arrOfLinks, term);
+
+// const paolo = {
+//     name: "Paolo",
+//     city: 'Siena',
+//     age: 44
+// };
+
+// const tom = {
+//     name: "Tom",
+//     city: "Munich",
+//     age: 33
+// };
+
+// function filterPerson(arr, term, key) {
+//     return arr.filter(function(person) {
+//       return person[key].match(term);
+//     });
+// }
+  
+// filterPerson([paolo, tom], "Siena", "city");
+  
