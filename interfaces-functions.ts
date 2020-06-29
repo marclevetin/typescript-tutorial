@@ -2,7 +2,7 @@ interface IPerson {
     name: string;
     city: string;
     age: number;
-    printDetails(): string;
+    printDetails(): string; // use void if the function returns nothing
     anotherFunc(a: number, b: number): number;
 }
 
