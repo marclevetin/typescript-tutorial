@@ -18,7 +18,7 @@ function filterByTerm(input, searchTerm, lookupKey) {
         throw Error("inputArr cannot be empty");
     var regex = new RegExp(searchTerm, "i");
     return input.filter(function (arrayElement) {
-        return arrayElement[lookupKey].match(regex).toString();
+        return arrayElement[lookupKey].match(regex);
     });
 }
 filterByTerm(arrOfLinks, term);

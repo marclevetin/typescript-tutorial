@@ -9,6 +9,8 @@ interface TranslatedLink extends Link {
     language: string;
 }
 
+type Links = Array<Link>;
+
 const link1: TranslatedLink = {
     description: "Typescript tutotial for beginners is a tutorial for all the Javascript developers ...",
     id: 1,
@@ -20,12 +22,12 @@ const obj1: Link = {url: 'string1'};
 const obj2: Link = {url: 'string2'};
 const obj3: Link = {url: 'string3'};
 
-const arrOfLinks: Array<Link> = [obj1, obj2, obj3];
+const arrOfLinks: Links = [obj1, obj2, obj3];
 
 const term: string = 'java';
 
 function filterByTerm(
-    input: Array<Link>, 
+    input: Links,
     searchTerm: string,
     lookupKey: string = 'url'
 ) : Array<Link> {
